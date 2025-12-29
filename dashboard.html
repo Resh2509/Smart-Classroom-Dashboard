@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <h2>🏫 Classroom Status Dashboard</h2>
+    <!-- 🔹 FILTER / SORT -->
+  <div id="filterSort" style="text-align:center; margin-bottom:10px;">
+    <input type="text" id="classFilter" placeholder="Filter by Classroom Name" onkeyup="filterDashboard()">
+  </div>
+  <!-- 🔹 STATUS COUNTER -->
+  <div id="statusCounter" style="text-align:center; margin: 10px 0; font-weight:bold;">
+    🟢 Present: <span id="greenCount">0</span> |
+    🟡 Waiting: <span id="yellowCount">0</span> |
+    🔴 Absent: <span id="redCount">0</span> |
+    ⚪ Waiting State: <span id="colorlessCount">0</span>
+  </div>
+  <!-- 🔹 DASHBOARD SECTION -->
+  <section>
+    <div id="dashboard">
+      <!-- Classroom status cards will appear here dynamically -->
+    </div>
+  </section>
+
+  <!-- 🔹 LAST UPDATED TIME -->
+  <footer id="lastUpdated" style="text-align:center; margin-top:20px; font-size:14px;">
+    ⏱ Last Updated: <span id="updateTime">--</span>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>
